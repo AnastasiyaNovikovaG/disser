@@ -4,16 +4,16 @@ import javax.persistence.*;
 
 @Entity
 @IdClass(PlanPK.class)
-public class Plan {
+public class PlanEntity {
     private int idMonth;
     private int idType;
     private int idSem;
     private Integer hours;
     private int teacherId;
-    private Months monthsByIdMonth;
+    private MonthsEntity monthsEntityByIdMonth;
     private TypeOfClass typeOfClassByIdType;
-    private Semestr semestrByIdSem;
-    private Teacher teacherByTeacherId;
+    private SemestrEntity semestrEntityByIdSem;
+    private TeacherEntity teacherByTeacherEntityId;
 
     @Id
     @Column(name = "id_month")
@@ -70,13 +70,13 @@ public class Plan {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Plan plan = (Plan) o;
+        PlanEntity planEntity = (PlanEntity) o;
 
-        if (idMonth != plan.idMonth) return false;
-        if (idType != plan.idType) return false;
-        if (idSem != plan.idSem) return false;
-        if (teacherId != plan.teacherId) return false;
-        if (hours != null ? !hours.equals(plan.hours) : plan.hours != null) return false;
+        if (idMonth != planEntity.idMonth) return false;
+        if (idType != planEntity.idType) return false;
+        if (idSem != planEntity.idSem) return false;
+        if (teacherId != planEntity.teacherId) return false;
+        if (hours != null ? !hours.equals(planEntity.hours) : planEntity.hours != null) return false;
 
         return true;
     }
@@ -93,12 +93,12 @@ public class Plan {
 
     @ManyToOne
     @JoinColumn(name = "id_month", referencedColumnName = "id", nullable = false)
-    public Months getMonthsByIdMonth() {
-        return monthsByIdMonth;
+    public MonthsEntity getMonthsByIdMonth() {
+        return monthsEntityByIdMonth;
     }
 
-    public void setMonthsByIdMonth(Months monthsByIdMonth) {
-        this.monthsByIdMonth = monthsByIdMonth;
+    public void setMonthsByIdMonth(MonthsEntity monthsEntityByIdMonth) {
+        this.monthsEntityByIdMonth = monthsEntityByIdMonth;
     }
 
     @ManyToOne
@@ -113,21 +113,21 @@ public class Plan {
 
     @ManyToOne
     @JoinColumn(name = "id_sem", referencedColumnName = "id", nullable = false)
-    public Semestr getSemestrByIdSem() {
-        return semestrByIdSem;
+    public SemestrEntity getSemestrByIdSem() {
+        return semestrEntityByIdSem;
     }
 
-    public void setSemestrByIdSem(Semestr semestrByIdSem) {
-        this.semestrByIdSem = semestrByIdSem;
+    public void setSemestrByIdSem(SemestrEntity semestrEntityByIdSem) {
+        this.semestrEntityByIdSem = semestrEntityByIdSem;
     }
 
     @ManyToOne
     @JoinColumn(name = "teacher_id", referencedColumnName = "id", nullable = false)
-    public Teacher getTeacherByTeacherId() {
-        return teacherByTeacherId;
+    public TeacherEntity getTeacherByTeacherId() {
+        return teacherByTeacherEntityId;
     }
 
-    public void setTeacherByTeacherId(Teacher teacherByTeacherId) {
-        this.teacherByTeacherId = teacherByTeacherId;
+    public void setTeacherByTeacherId(TeacherEntity teacherByTeacherEntityId) {
+        this.teacherByTeacherEntityId = teacherByTeacherEntityId;
     }
 }

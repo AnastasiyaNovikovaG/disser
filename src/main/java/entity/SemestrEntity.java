@@ -4,11 +4,11 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-public class Semestr {
+public class SemestrEntity {
     private int id;
     private Integer number;
-    private Collection<Logbook> logbooksById;
-    private Collection<Plan> plansById;
+    private Collection<LogbookEntity> logbooksById;
+    private Collection<PlanEntity> plansById;
 
     @Id
     @Column(name = "id")
@@ -35,10 +35,10 @@ public class Semestr {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Semestr semestr = (Semestr) o;
+        SemestrEntity semestrEntity = (SemestrEntity) o;
 
-        if (id != semestr.id) return false;
-        if (number != null ? !number.equals(semestr.number) : semestr.number != null) return false;
+        if (id != semestrEntity.id) return false;
+        if (number != null ? !number.equals(semestrEntity.number) : semestrEntity.number != null) return false;
 
         return true;
     }
@@ -51,20 +51,20 @@ public class Semestr {
     }
 
     @OneToMany(mappedBy = "semestrByIdSem")
-    public Collection<Logbook> getLogbooksById() {
+    public Collection<LogbookEntity> getLogbooksById() {
         return logbooksById;
     }
 
-    public void setLogbooksById(Collection<Logbook> logbooksById) {
+    public void setLogbooksById(Collection<LogbookEntity> logbooksById) {
         this.logbooksById = logbooksById;
     }
 
     @OneToMany(mappedBy = "semestrByIdSem")
-    public Collection<Plan> getPlansById() {
+    public Collection<PlanEntity> getPlansById() {
         return plansById;
     }
 
-    public void setPlansById(Collection<Plan> plansById) {
+    public void setPlansById(Collection<PlanEntity> plansById) {
         this.plansById = plansById;
     }
 }

@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-public class Teacher {
+public class TeacherEntity {
     private int id;
     private String surname;
     private String name;
@@ -23,8 +23,8 @@ public class Teacher {
     private String telMobile;
     private int idDegree;
     private int idTitle;
-    private AcademicDegree academicDegreeByIdDegree;
-    private AcademicTitle academicTitleByIdTitle;
+    private AcademicDegreeEntity academicDegreeByIdDegreeEntity;
+    private AcademicTitleEntity academicTitleByIdTitleEntity;
 
     @Id
     @Column(name = "id")
@@ -211,28 +211,28 @@ public class Teacher {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Teacher teacher = (Teacher) o;
+        TeacherEntity teacherEntity = (TeacherEntity) o;
 
-        if (id != teacher.id) return false;
-        if (idDegree != teacher.idDegree) return false;
-        if (idTitle != teacher.idTitle) return false;
-        if (surname != null ? !surname.equals(teacher.surname) : teacher.surname != null) return false;
-        if (name != null ? !name.equals(teacher.name) : teacher.name != null) return false;
-        if (fathername != null ? !fathername.equals(teacher.fathername) : teacher.fathername != null) return false;
-        if (passport != null ? !passport.equals(teacher.passport) : teacher.passport != null) return false;
-        if (idPassport != null ? !idPassport.equals(teacher.idPassport) : teacher.idPassport != null) return false;
-        if (idInsurance != null ? !idInsurance.equals(teacher.idInsurance) : teacher.idInsurance != null) return false;
-        if (datePassport != null ? !datePassport.equals(teacher.datePassport) : teacher.datePassport != null)
+        if (id != teacherEntity.id) return false;
+        if (idDegree != teacherEntity.idDegree) return false;
+        if (idTitle != teacherEntity.idTitle) return false;
+        if (surname != null ? !surname.equals(teacherEntity.surname) : teacherEntity.surname != null) return false;
+        if (name != null ? !name.equals(teacherEntity.name) : teacherEntity.name != null) return false;
+        if (fathername != null ? !fathername.equals(teacherEntity.fathername) : teacherEntity.fathername != null) return false;
+        if (passport != null ? !passport.equals(teacherEntity.passport) : teacherEntity.passport != null) return false;
+        if (idPassport != null ? !idPassport.equals(teacherEntity.idPassport) : teacherEntity.idPassport != null) return false;
+        if (idInsurance != null ? !idInsurance.equals(teacherEntity.idInsurance) : teacherEntity.idInsurance != null) return false;
+        if (datePassport != null ? !datePassport.equals(teacherEntity.datePassport) : teacherEntity.datePassport != null)
             return false;
-        if (placePassport != null ? !placePassport.equals(teacher.placePassport) : teacher.placePassport != null)
+        if (placePassport != null ? !placePassport.equals(teacherEntity.placePassport) : teacherEntity.placePassport != null)
             return false;
-        if (postCode != null ? !postCode.equals(teacher.postCode) : teacher.postCode != null) return false;
-        if (address != null ? !address.equals(teacher.address) : teacher.address != null) return false;
-        if (mainJob != null ? !mainJob.equals(teacher.mainJob) : teacher.mainJob != null) return false;
-        if (position != null ? !position.equals(teacher.position) : teacher.position != null) return false;
-        if (telHome != null ? !telHome.equals(teacher.telHome) : teacher.telHome != null) return false;
-        if (telJob != null ? !telJob.equals(teacher.telJob) : teacher.telJob != null) return false;
-        if (telMobile != null ? !telMobile.equals(teacher.telMobile) : teacher.telMobile != null) return false;
+        if (postCode != null ? !postCode.equals(teacherEntity.postCode) : teacherEntity.postCode != null) return false;
+        if (address != null ? !address.equals(teacherEntity.address) : teacherEntity.address != null) return false;
+        if (mainJob != null ? !mainJob.equals(teacherEntity.mainJob) : teacherEntity.mainJob != null) return false;
+        if (position != null ? !position.equals(teacherEntity.position) : teacherEntity.position != null) return false;
+        if (telHome != null ? !telHome.equals(teacherEntity.telHome) : teacherEntity.telHome != null) return false;
+        if (telJob != null ? !telJob.equals(teacherEntity.telJob) : teacherEntity.telJob != null) return false;
+        if (telMobile != null ? !telMobile.equals(teacherEntity.telMobile) : teacherEntity.telMobile != null) return false;
 
         return true;
     }
@@ -262,21 +262,21 @@ public class Teacher {
 
     @ManyToOne
     @JoinColumn(name = "id_degree", referencedColumnName = "id", nullable = false)
-    public AcademicDegree getAcademicDegreeByIdDegree() {
-        return academicDegreeByIdDegree;
+    public AcademicDegreeEntity getAcademicDegreeByIdDegree() {
+        return academicDegreeByIdDegreeEntity;
     }
 
-    public void setAcademicDegreeByIdDegree(AcademicDegree academicDegreeByIdDegree) {
-        this.academicDegreeByIdDegree = academicDegreeByIdDegree;
+    public void setAcademicDegreeByIdDegree(AcademicDegreeEntity academicDegreeByIdDegreeEntity) {
+        this.academicDegreeByIdDegreeEntity = academicDegreeByIdDegreeEntity;
     }
 
     @ManyToOne
     @JoinColumn(name = "id_title", referencedColumnName = "id", nullable = false)
-    public AcademicTitle getAcademicTitleByIdTitle() {
-        return academicTitleByIdTitle;
+    public AcademicTitleEntity getAcademicTitleByIdTitle() {
+        return academicTitleByIdTitleEntity;
     }
 
-    public void setAcademicTitleByIdTitle(AcademicTitle academicTitleByIdTitle) {
-        this.academicTitleByIdTitle = academicTitleByIdTitle;
+    public void setAcademicTitleByIdTitle(AcademicTitleEntity academicTitleByIdTitleEntity) {
+        this.academicTitleByIdTitleEntity = academicTitleByIdTitleEntity;
     }
 }

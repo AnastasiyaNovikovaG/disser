@@ -4,12 +4,12 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-public class Department {
+public class DepartmentEntity {
     private int id;
     private String name;
     private int facultyId;
-    private Faculty facultyByFacultyId;
-    private Collection<Logbook> logbooksById;
+    private FacultyEntity facultyByFacultyEntityId;
+    private Collection<LogbookEntity> logbooksById;
 
     @Id
     @Column(name = "id")
@@ -46,7 +46,7 @@ public class Department {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Department that = (Department) o;
+        DepartmentEntity that = (DepartmentEntity) o;
 
         if (id != that.id) return false;
         if (facultyId != that.facultyId) return false;
@@ -65,20 +65,20 @@ public class Department {
 
     @ManyToOne
     @JoinColumn(name = "faculty_id", referencedColumnName = "id", nullable = false)
-    public Faculty getFacultyByFacultyId() {
-        return facultyByFacultyId;
+    public FacultyEntity getFacultyByFacultyId() {
+        return facultyByFacultyEntityId;
     }
 
-    public void setFacultyByFacultyId(Faculty facultyByFacultyId) {
-        this.facultyByFacultyId = facultyByFacultyId;
+    public void setFacultyByFacultyId(FacultyEntity facultyByFacultyEntityId) {
+        this.facultyByFacultyEntityId = facultyByFacultyEntityId;
     }
 
     @OneToMany(mappedBy = "departmentByDepartmentId")
-    public Collection<Logbook> getLogbooksById() {
+    public Collection<LogbookEntity> getLogbooksById() {
         return logbooksById;
     }
 
-    public void setLogbooksById(Collection<Logbook> logbooksById) {
+    public void setLogbooksById(Collection<LogbookEntity> logbooksById) {
         this.logbooksById = logbooksById;
     }
 }

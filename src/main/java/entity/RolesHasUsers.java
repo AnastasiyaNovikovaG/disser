@@ -9,9 +9,9 @@ public class RolesHasUsers {
     private int rolesId;
     private int usersId;
     private int teacherId;
-    private Roles rolesByRolesId;
-    private Users usersByUsersId;
-    private Teacher teacherByTeacherId;
+    private RolesEntity rolesByRolesEntityId;
+    private UsersEntity usersByUsersEntityId;
+    private TeacherEntity teacherByTeacherEntityId;
 
     @Id
     @Column(name = "roles_id")
@@ -67,31 +67,31 @@ public class RolesHasUsers {
 
     @ManyToOne
     @JoinColumn(name = "roles_id", referencedColumnName = "id", nullable = false)
-    public Roles getRolesByRolesId() {
-        return rolesByRolesId;
+    public RolesEntity getRolesByRolesId() {
+        return rolesByRolesEntityId;
     }
 
-    public void setRolesByRolesId(Roles rolesByRolesId) {
-        this.rolesByRolesId = rolesByRolesId;
+    public void setRolesByRolesId(RolesEntity rolesByRolesEntityId) {
+        this.rolesByRolesEntityId = rolesByRolesEntityId;
     }
 
     @ManyToOne
     @JoinColumn(name = "users_id", referencedColumnName = "id", nullable = false)
-    public Users getUsersByUsersId() {
-        return usersByUsersId;
+    public UsersEntity getUsersByUsersId() {
+        return usersByUsersEntityId;
     }
 
-    public void setUsersByUsersId(Users usersByUsersId) {
-        this.usersByUsersId = usersByUsersId;
+    public void setUsersByUsersId(UsersEntity usersByUsersEntityId) {
+        this.usersByUsersEntityId = usersByUsersEntityId;
     }
 
     @ManyToOne
     @JoinColumn(name = "teacher_id", referencedColumnName = "id", nullable = false)
-    public Teacher getTeacherByTeacherId() {
-        return teacherByTeacherId;
+    public TeacherEntity getTeacherByTeacherId() {
+        return teacherByTeacherEntityId;
     }
 
-    public void setTeacherByTeacherId(Teacher teacherByTeacherId) {
-        this.teacherByTeacherId = teacherByTeacherId;
+    public void setTeacherByTeacherId(TeacherEntity teacherByTeacherEntityId) {
+        this.teacherByTeacherEntityId = teacherByTeacherEntityId;
     }
 }

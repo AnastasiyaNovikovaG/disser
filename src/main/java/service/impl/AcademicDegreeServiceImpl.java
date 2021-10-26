@@ -1,22 +1,26 @@
 package service.impl;
 
-import entity.AcademicDegree;
+import entity.AcademicDegreeEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import repository.AcademicDegreeRepository;
+import service.AcademicDegreeService;
 
 import java.util.List;
 
 @Service
-public class AcademicDegreeServiceImpl implements  {
+public class AcademicDegreeServiceImpl implements AcademicDegreeService {
+@Autowired
+private AcademicDegreeRepository academicDegreeRepository;
 
 
     @Override
-    public AcademicDegree findAcademicDegreeById(Integer integer) {
-        return ;
+    public AcademicDegreeEntity findAcademicDegreeById(Integer id) {
+        return academicDegreeRepository.findAcademicDegreeById(id);
     }
 
     @Override
-    public List<AcademicDegree> findAll() {
-        return null;
+    public List<AcademicDegreeEntity> findAll() {
+        return academicDegreeRepository.findAll();
     }
 }

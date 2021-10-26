@@ -4,10 +4,10 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-public class Subject {
+public class SubjectEntity {
     private int id;
     private String subject;
-    private Collection<Logbook> logbooksById;
+    private Collection<LogbookEntity> logbooksById;
 
     @Id
     @Column(name = "id")
@@ -34,10 +34,10 @@ public class Subject {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Subject subject1 = (Subject) o;
+        SubjectEntity subjectEntity1 = (SubjectEntity) o;
 
-        if (id != subject1.id) return false;
-        if (subject != null ? !subject.equals(subject1.subject) : subject1.subject != null) return false;
+        if (id != subjectEntity1.id) return false;
+        if (subject != null ? !subject.equals(subjectEntity1.subject) : subjectEntity1.subject != null) return false;
 
         return true;
     }
@@ -50,11 +50,11 @@ public class Subject {
     }
 
     @OneToMany(mappedBy = "subjectByIdSubj")
-    public Collection<Logbook> getLogbooksById() {
+    public Collection<LogbookEntity> getLogbooksById() {
         return logbooksById;
     }
 
-    public void setLogbooksById(Collection<Logbook> logbooksById) {
+    public void setLogbooksById(Collection<LogbookEntity> logbooksById) {
         this.logbooksById = logbooksById;
     }
 }

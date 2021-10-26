@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-public class Contract {
+public class ContractEntity {
     private int id;
     private Integer idTeacher;
     private Date dateFrom;
@@ -14,7 +14,7 @@ public class Contract {
     private String conAggrNo;
     private Integer idFunsAccount;
     private String contractNo;
-    private Teacher teacherByIdTeacher;
+    private TeacherEntity teacherByIdTeacherEntity;
 
     @Id
     @Column(name = "id")
@@ -111,18 +111,18 @@ public class Contract {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Contract contract = (Contract) o;
+        ContractEntity contractEntity = (ContractEntity) o;
 
-        if (id != contract.id) return false;
-        if (idTeacher != null ? !idTeacher.equals(contract.idTeacher) : contract.idTeacher != null) return false;
-        if (dateFrom != null ? !dateFrom.equals(contract.dateFrom) : contract.dateFrom != null) return false;
-        if (dateTo != null ? !dateTo.equals(contract.dateTo) : contract.dateTo != null) return false;
-        if (valueH != null ? !valueH.equals(contract.valueH) : contract.valueH != null) return false;
-        if (dateC != null ? !dateC.equals(contract.dateC) : contract.dateC != null) return false;
-        if (conAggrNo != null ? !conAggrNo.equals(contract.conAggrNo) : contract.conAggrNo != null) return false;
-        if (idFunsAccount != null ? !idFunsAccount.equals(contract.idFunsAccount) : contract.idFunsAccount != null)
+        if (id != contractEntity.id) return false;
+        if (idTeacher != null ? !idTeacher.equals(contractEntity.idTeacher) : contractEntity.idTeacher != null) return false;
+        if (dateFrom != null ? !dateFrom.equals(contractEntity.dateFrom) : contractEntity.dateFrom != null) return false;
+        if (dateTo != null ? !dateTo.equals(contractEntity.dateTo) : contractEntity.dateTo != null) return false;
+        if (valueH != null ? !valueH.equals(contractEntity.valueH) : contractEntity.valueH != null) return false;
+        if (dateC != null ? !dateC.equals(contractEntity.dateC) : contractEntity.dateC != null) return false;
+        if (conAggrNo != null ? !conAggrNo.equals(contractEntity.conAggrNo) : contractEntity.conAggrNo != null) return false;
+        if (idFunsAccount != null ? !idFunsAccount.equals(contractEntity.idFunsAccount) : contractEntity.idFunsAccount != null)
             return false;
-        if (contractNo != null ? !contractNo.equals(contract.contractNo) : contract.contractNo != null) return false;
+        if (contractNo != null ? !contractNo.equals(contractEntity.contractNo) : contractEntity.contractNo != null) return false;
 
         return true;
     }
@@ -143,11 +143,11 @@ public class Contract {
 
     @ManyToOne
     @JoinColumn(name = "id_teacher", referencedColumnName = "id")
-    public Teacher getTeacherByIdTeacher() {
-        return teacherByIdTeacher;
+    public TeacherEntity getTeacherByIdTeacher() {
+        return teacherByIdTeacherEntity;
     }
 
-    public void setTeacherByIdTeacher(Teacher teacherByIdTeacher) {
-        this.teacherByIdTeacher = teacherByIdTeacher;
+    public void setTeacherByIdTeacher(TeacherEntity teacherByIdTeacherEntity) {
+        this.teacherByIdTeacherEntity = teacherByIdTeacherEntity;
     }
 }

@@ -4,10 +4,11 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-public class Faculty {
+@Table(name = "academic_degree", schema = "mydb")
+public class AcademicDegreeEntity implements Comparable<AcademicDegreeEntity>{
     private int id;
     private String name;
-    private Collection<Department> departmentsById;
+    private Collection<TeacherEntity> teachersById;
 
     @Id
     @Column(name = "id")
@@ -34,10 +35,10 @@ public class Faculty {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Faculty faculty = (Faculty) o;
+        AcademicDegreeEntity that = (AcademicDegreeEntity) o;
 
-        if (id != faculty.id) return false;
-        if (name != null ? !name.equals(faculty.name) : faculty.name != null) return false;
+        if (id != that.id) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
 
         return true;
     }
@@ -49,12 +50,17 @@ public class Faculty {
         return result;
     }
 
-    @OneToMany(mappedBy = "facultyByFacultyId")
-    public Collection<Department> getDepartmentsById() {
-        return departmentsById;
+    @OneToMany(mappedBy = "academicDegreeByIdDegree")
+    public Collection<TeacherEntity> getTeachersById() {
+        return teachersById;
     }
 
-    public void setDepartmentsById(Collection<Department> departmentsById) {
-        this.departmentsById = departmentsById;
+    public void setTeachersById(Collection<TeacherEntity> teachersById) {
+        this.teachersById = teachersById;
+    }
+
+    @Override
+    public int compareTo(AcademicDegreeEntity o) {
+        return 0;
     }
 }

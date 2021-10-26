@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-public class Logbook {
+public class LogbookEntity {
     private int id;
     private Date date;
     private Integer idType;
@@ -15,11 +15,11 @@ public class Logbook {
     private int monthsId;
     private int departmentId;
     private TypeOfClass typeOfClassByIdType;
-    private Subject subjectByIdSubj;
-    private Teacher teacherByIdTeach;
-    private Semestr semestrByIdSem;
-    private Months monthsByMonthsId;
-    private Department departmentByDepartmentId;
+    private SubjectEntity subjectEntityByIdSubj;
+    private TeacherEntity teacherEntityByIdTeach;
+    private SemestrEntity semestrEntityByIdSem;
+    private MonthsEntity monthsByMonthsEntityId;
+    private DepartmentEntity departmentByDepartmentEntityId;
 
     @Id
     @Column(name = "id")
@@ -116,17 +116,17 @@ public class Logbook {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Logbook logbook = (Logbook) o;
+        LogbookEntity logbookEntity = (LogbookEntity) o;
 
-        if (id != logbook.id) return false;
-        if (monthsId != logbook.monthsId) return false;
-        if (departmentId != logbook.departmentId) return false;
-        if (date != null ? !date.equals(logbook.date) : logbook.date != null) return false;
-        if (idType != null ? !idType.equals(logbook.idType) : logbook.idType != null) return false;
-        if (idSubj != null ? !idSubj.equals(logbook.idSubj) : logbook.idSubj != null) return false;
-        if (hours != null ? !hours.equals(logbook.hours) : logbook.hours != null) return false;
-        if (idTeach != null ? !idTeach.equals(logbook.idTeach) : logbook.idTeach != null) return false;
-        if (idSem != null ? !idSem.equals(logbook.idSem) : logbook.idSem != null) return false;
+        if (id != logbookEntity.id) return false;
+        if (monthsId != logbookEntity.monthsId) return false;
+        if (departmentId != logbookEntity.departmentId) return false;
+        if (date != null ? !date.equals(logbookEntity.date) : logbookEntity.date != null) return false;
+        if (idType != null ? !idType.equals(logbookEntity.idType) : logbookEntity.idType != null) return false;
+        if (idSubj != null ? !idSubj.equals(logbookEntity.idSubj) : logbookEntity.idSubj != null) return false;
+        if (hours != null ? !hours.equals(logbookEntity.hours) : logbookEntity.hours != null) return false;
+        if (idTeach != null ? !idTeach.equals(logbookEntity.idTeach) : logbookEntity.idTeach != null) return false;
+        if (idSem != null ? !idSem.equals(logbookEntity.idSem) : logbookEntity.idSem != null) return false;
 
         return true;
     }
@@ -157,51 +157,51 @@ public class Logbook {
 
     @ManyToOne
     @JoinColumn(name = "id_subj", referencedColumnName = "id")
-    public Subject getSubjectByIdSubj() {
-        return subjectByIdSubj;
+    public SubjectEntity getSubjectByIdSubj() {
+        return subjectEntityByIdSubj;
     }
 
-    public void setSubjectByIdSubj(Subject subjectByIdSubj) {
-        this.subjectByIdSubj = subjectByIdSubj;
+    public void setSubjectByIdSubj(SubjectEntity subjectEntityByIdSubj) {
+        this.subjectEntityByIdSubj = subjectEntityByIdSubj;
     }
 
     @ManyToOne
     @JoinColumn(name = "id_teach", referencedColumnName = "id")
-    public Teacher getTeacherByIdTeach() {
-        return teacherByIdTeach;
+    public TeacherEntity getTeacherByIdTeach() {
+        return teacherEntityByIdTeach;
     }
 
-    public void setTeacherByIdTeach(Teacher teacherByIdTeach) {
-        this.teacherByIdTeach = teacherByIdTeach;
+    public void setTeacherByIdTeach(TeacherEntity teacherEntityByIdTeach) {
+        this.teacherEntityByIdTeach = teacherEntityByIdTeach;
     }
 
     @ManyToOne
     @JoinColumn(name = "id_sem", referencedColumnName = "id")
-    public Semestr getSemestrByIdSem() {
-        return semestrByIdSem;
+    public SemestrEntity getSemestrByIdSem() {
+        return semestrEntityByIdSem;
     }
 
-    public void setSemestrByIdSem(Semestr semestrByIdSem) {
-        this.semestrByIdSem = semestrByIdSem;
+    public void setSemestrByIdSem(SemestrEntity semestrEntityByIdSem) {
+        this.semestrEntityByIdSem = semestrEntityByIdSem;
     }
 
     @ManyToOne
     @JoinColumn(name = "months_id", referencedColumnName = "id", nullable = false)
-    public Months getMonthsByMonthsId() {
-        return monthsByMonthsId;
+    public MonthsEntity getMonthsByMonthsId() {
+        return monthsByMonthsEntityId;
     }
 
-    public void setMonthsByMonthsId(Months monthsByMonthsId) {
-        this.monthsByMonthsId = monthsByMonthsId;
+    public void setMonthsByMonthsId(MonthsEntity monthsByMonthsEntityId) {
+        this.monthsByMonthsEntityId = monthsByMonthsEntityId;
     }
 
     @ManyToOne
     @JoinColumn(name = "department_id", referencedColumnName = "id", nullable = false)
-    public Department getDepartmentByDepartmentId() {
-        return departmentByDepartmentId;
+    public DepartmentEntity getDepartmentByDepartmentId() {
+        return departmentByDepartmentEntityId;
     }
 
-    public void setDepartmentByDepartmentId(Department departmentByDepartmentId) {
-        this.departmentByDepartmentId = departmentByDepartmentId;
+    public void setDepartmentByDepartmentId(DepartmentEntity departmentByDepartmentEntityId) {
+        this.departmentByDepartmentEntityId = departmentByDepartmentEntityId;
     }
 }

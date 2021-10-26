@@ -8,8 +8,8 @@ import java.util.Collection;
 public class TypeOfClass {
     private int id;
     private String name;
-    private Collection<Logbook> logbooksById;
-    private Collection<Plan> plansById;
+    private Collection<LogbookEntity> logbooksById;
+    private Collection<PlanEntity> plansById;
 
     @Id
     @Column(name = "id")
@@ -52,20 +52,20 @@ public class TypeOfClass {
     }
 
     @OneToMany(mappedBy = "typeOfClassByIdType")
-    public Collection<Logbook> getLogbooksById() {
+    public Collection<LogbookEntity> getLogbooksById() {
         return logbooksById;
     }
 
-    public void setLogbooksById(Collection<Logbook> logbooksById) {
+    public void setLogbooksById(Collection<LogbookEntity> logbooksById) {
         this.logbooksById = logbooksById;
     }
 
     @OneToMany(mappedBy = "typeOfClassByIdType")
-    public Collection<Plan> getPlansById() {
+    public Collection<PlanEntity> getPlansById() {
         return plansById;
     }
 
-    public void setPlansById(Collection<Plan> plansById) {
+    public void setPlansById(Collection<PlanEntity> plansById) {
         this.plansById = plansById;
     }
 }

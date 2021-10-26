@@ -1,23 +1,31 @@
 package controller;
 
-import entity.AcademicDegree;
+import entity.AcademicDegreeEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import repository.AcademicDegreeRepository;
+import service.AcademicDegreeService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/academicdegree")
 public class AcademicDegreeController {
+    @Autowired
+    public AcademicDegreeService academicDegreeService;
 
-    @Override
-    public AcademicDegree findAcademicDegreeById(Integer integer) {
-        return null;
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public List<AcademicDegreeEntity> getAllTasks() {
+        return academicDegreeService.findAll();
     }
 
-    @Override
-    public List<AcademicDegree> findAll() {
-        return null;
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ResponseEntity<AcademicDegreeEntity> getAcademicDegreeById(@PathVariable(name = "id") Integer id) {
+        AcademicDegreeEntity academicDegreeEntity = academicDegreeService.findAcademicDegreeById(id);
+        return ResponseEntity.ok(academicDegreeEntity);
     }
+
 }

@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-public class Roles {
+public class RolesEntity {
     private int id;
     private String role;
     private Collection<RolesHasUsers> rolesHasUsersById;
@@ -34,10 +34,10 @@ public class Roles {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Roles roles = (Roles) o;
+        RolesEntity rolesEntity = (RolesEntity) o;
 
-        if (id != roles.id) return false;
-        if (role != null ? !role.equals(roles.role) : roles.role != null) return false;
+        if (id != rolesEntity.id) return false;
+        if (role != null ? !role.equals(rolesEntity.role) : rolesEntity.role != null) return false;
 
         return true;
     }

@@ -4,11 +4,11 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-public class Months {
+public class MonthsEntity {
     private int id;
     private String month;
-    private Collection<Logbook> logbooksById;
-    private Collection<Plan> plansById;
+    private Collection<LogbookEntity> logbooksById;
+    private Collection<PlanEntity> plansById;
 
     @Id
     @Column(name = "id")
@@ -35,10 +35,10 @@ public class Months {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Months months = (Months) o;
+        MonthsEntity monthsEntity = (MonthsEntity) o;
 
-        if (id != months.id) return false;
-        if (month != null ? !month.equals(months.month) : months.month != null) return false;
+        if (id != monthsEntity.id) return false;
+        if (month != null ? !month.equals(monthsEntity.month) : monthsEntity.month != null) return false;
 
         return true;
     }
@@ -51,20 +51,20 @@ public class Months {
     }
 
     @OneToMany(mappedBy = "monthsByMonthsId")
-    public Collection<Logbook> getLogbooksById() {
+    public Collection<LogbookEntity> getLogbooksById() {
         return logbooksById;
     }
 
-    public void setLogbooksById(Collection<Logbook> logbooksById) {
+    public void setLogbooksById(Collection<LogbookEntity> logbooksById) {
         this.logbooksById = logbooksById;
     }
 
     @OneToMany(mappedBy = "monthsByIdMonth")
-    public Collection<Plan> getPlansById() {
+    public Collection<PlanEntity> getPlansById() {
         return plansById;
     }
 
-    public void setPlansById(Collection<Plan> plansById) {
+    public void setPlansById(Collection<PlanEntity> plansById) {
         this.plansById = plansById;
     }
 }
