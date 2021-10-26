@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url"><![CDATA[jdbc:mysql://localhost:3306/mydb?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&serverTimezone=UTC]]></property>
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+      <mapping class="entity.AcademicDegree"/>
+      <mapping class="entity.AcademicTitle"/>
+      <mapping class="entity.Contract"/>
+      <mapping class="entity.Logbook"/>
+      <mapping class="entity.Roles"/>
+      <mapping class="entity.RolesHasUsers"/>
+      <mapping class="entity.Teacher"/>
+    <mapping class="entity.Users"/>
+    <mapping class="entity.Department"/>
+    <mapping class="entity.Faculty"/>
+    <mapping class="entity.Months"/>
+    <mapping class="entity.Plan"/>
+    <mapping class="entity.Semestr"/>
+    <mapping class="entity.Subject"/>
+    <mapping class="entity.TypeOfClass"/>
+    <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>
