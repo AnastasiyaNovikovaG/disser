@@ -14,7 +14,7 @@ public class LogbookEntity {
     private Integer idSem;
     private int monthsId;
     private int departmentId;
-    private TypeOfClass typeOfClassByIdType;
+    private TypeOfClassEntity typeOfClassByIdType;
     private SubjectEntity subjectEntityByIdSubj;
     private TeacherEntity teacherEntityByIdTeach;
     private SemestrEntity semestrEntityByIdSem;
@@ -147,11 +147,11 @@ public class LogbookEntity {
 
     @ManyToOne
     @JoinColumn(name = "id_type", referencedColumnName = "id")
-    public TypeOfClass getTypeOfClassByIdType() {
+    public TypeOfClassEntity getTypeOfClassByIdType() {
         return typeOfClassByIdType;
     }
 
-    public void setTypeOfClassByIdType(TypeOfClass typeOfClassByIdType) {
+    public void setTypeOfClassByIdType(TypeOfClassEntity typeOfClassByIdType) {
         this.typeOfClassByIdType = typeOfClassByIdType;
     }
 

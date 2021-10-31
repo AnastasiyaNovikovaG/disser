@@ -21,6 +21,7 @@ private AcademicDegreeRepository academicDegreeRepository;
 
     @Override
     public List<AcademicDegreeEntity> findAll() {
+
         return academicDegreeRepository.findAll();
     }
 }

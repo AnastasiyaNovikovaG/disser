@@ -20,7 +20,7 @@
     <mapping class="entity.PlanEntity"/>
     <mapping class="entity.SemestrEntity"/>
     <mapping class="entity.SubjectEntity"/>
-    <mapping class="entity.TypeOfClass"/>
+    <mapping class="entity.TypeOfClassEntity"/>
     <mapping class="entity.MonthsEntity"/>
       <mapping class="entity.SemestrEntity"/>
     <mapping class="entity.MonthsEntity"/>

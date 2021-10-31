@@ -5,7 +5,7 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "type_of_class", schema = "mydb", catalog = "")
-public class TypeOfClass {
+public class TypeOfClassEntity {
     private int id;
     private String name;
     private Collection<LogbookEntity> logbooksById;
@@ -36,7 +36,7 @@ public class TypeOfClass {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TypeOfClass that = (TypeOfClass) o;
+        TypeOfClassEntity that = (TypeOfClassEntity) o;
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;

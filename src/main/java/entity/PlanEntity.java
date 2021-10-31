@@ -11,7 +11,7 @@ public class PlanEntity {
     private Integer hours;
     private int teacherId;
     private MonthsEntity monthsEntityByIdMonth;
-    private TypeOfClass typeOfClassByIdType;
+    private TypeOfClassEntity typeOfClassByIdType;
     private SemestrEntity semestrEntityByIdSem;
     private TeacherEntity teacherByTeacherEntityId;
 
@@ -103,11 +103,11 @@ public class PlanEntity {
 
     @ManyToOne
     @JoinColumn(name = "id_type", referencedColumnName = "id", nullable = false)
-    public TypeOfClass getTypeOfClassByIdType() {
+    public TypeOfClassEntity getTypeOfClassByIdType() {
         return typeOfClassByIdType;
     }
 
-    public void setTypeOfClassByIdType(TypeOfClass typeOfClassByIdType) {
+    public void setTypeOfClassByIdType(TypeOfClassEntity typeOfClassByIdType) {
         this.typeOfClassByIdType = typeOfClassByIdType;
     }
 
