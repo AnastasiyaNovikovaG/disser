@@ -6,25 +6,25 @@
   <session-factory>
     <property name="connection.url"><![CDATA[jdbc:mysql://localhost:3306/mydb?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&serverTimezone=UTC]]></property>
     <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-    <mapping class="entity.AcademicDegreeEntity"/>
-      <mapping class="entity.AcademicTitleEntity"/>
-      <mapping class="entity.ContractEntity"/>
-      <mapping class="entity.LogbookEntity"/>
-      <mapping class="entity.RolesEntity"/>
-      <mapping class="entity.RolesHasUsers"/>
-      <mapping class="entity.TeacherEntity"/>
-    <mapping class="entity.UsersEntity"/>
-    <mapping class="entity.DepartmentEntity"/>
-    <mapping class="entity.FacultyEntity"/>
-    <mapping class="entity.MonthsEntity"/>
-    <mapping class="entity.PlanEntity"/>
-    <mapping class="entity.SemestrEntity"/>
-    <mapping class="entity.SubjectEntity"/>
-    <mapping class="entity.TypeOfClassEntity"/>
-    <mapping class="entity.MonthsEntity"/>
-      <mapping class="entity.SemestrEntity"/>
-    <mapping class="entity.MonthsEntity"/>
-    <mapping class="entity.SemestrEntity"/>
+    <mapping class="novikava.entity.AcademicDegreeEntity"/>
+      <mapping class="novikava.entity.AcademicTitleEntity"/>
+      <mapping class="novikava.entity.ContractEntity"/>
+      <mapping class="novikava.entity.LogbookEntity"/>
+      <mapping class="novikava.entity.RolesEntity"/>
+      <mapping class="novikava.entity.RolesHasUsers"/>
+      <mapping class="novikava.entity.TeacherEntity"/>
+    <mapping class="novikava.entity.UsersEntity"/>
+    <mapping class="novikava.entity.DepartmentEntity"/>
+    <mapping class="novikava.entity.FacultyEntity"/>
+    <mapping class="novikava.entity.MonthsEntity"/>
+    <mapping class="novikava.entity.PlanEntity"/>
+    <mapping class="novikava.entity.SemestrEntity"/>
+    <mapping class="novikava.entity.SubjectEntity"/>
+    <mapping class="novikava.entity.TypeOfClassEntity"/>
+    <mapping class="novikava.entity.MonthsEntity"/>
+      <mapping class="novikava.entity.SemestrEntity"/>
+    <mapping class="novikava.entity.MonthsEntity"/>
+    <mapping class="novikava.entity.SemestrEntity"/>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
