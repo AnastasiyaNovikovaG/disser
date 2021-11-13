@@ -8,8 +8,8 @@ import java.util.Collection;
 public class TypeOfClassEntity {
     private int id;
     private String name;
-    private Collection<LogbookEntity> logbooksById;
-    private Collection<PlanEntity> plansById;
+ /*   private Collection<LogbookEntity> logbooksById;
+    private Collection<PlanEntity> plansById;*/
 
     @Id
     @Column(name = "id")
@@ -51,7 +51,7 @@ public class TypeOfClassEntity {
         return result;
     }
 
-    @OneToMany(mappedBy = "typeOfClassByIdType")
+   /* @OneToMany(mappedBy = "typeOfClassByIdType")
     public Collection<LogbookEntity> getLogbooksById() {
         return logbooksById;
     }
@@ -67,5 +67,5 @@ public class TypeOfClassEntity {
 
     public void setPlansById(Collection<PlanEntity> plansById) {
         this.plansById = plansById;
-    }
+    }*/
 }

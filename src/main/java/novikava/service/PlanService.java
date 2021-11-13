@@ -14,6 +14,6 @@ public interface PlanService {
     PlanEntity save(PlanEntity planEntity);
     void delete(PlanEntity planEntity);
     void deleteById(Integer id);
-    void updatePlanById(Integer id, PlanEntity planEntity);
+    //void updatePlanById(Integer id, PlanEntity planEntity);
 
 }

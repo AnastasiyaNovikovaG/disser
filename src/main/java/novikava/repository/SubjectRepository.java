@@ -14,6 +14,6 @@ public interface SubjectRepository extends CrudRepository<SubjectEntity, Integer
     SubjectEntity save(SubjectEntity subjectEntity);
     void delete(SubjectEntity subjectEntity);
     void deleteById(Integer id);
-    void updateSubjectById(Integer id, SubjectEntity subjectEntity);
+    //void updateSubjectById(Integer id, SubjectEntity subjectEntity);
 
 }

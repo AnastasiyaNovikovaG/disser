@@ -13,6 +13,6 @@ public interface SubjectService {
     SubjectEntity save(SubjectEntity subjectEntity);
     void delete(SubjectEntity subjectEntity);
     void deleteById(Integer id);
-    void updateSubjectById(Integer id, SubjectEntity subjectEntity);
+    //void updateSubjectById(Integer id, SubjectEntity subjectEntity);
 
 }

@@ -13,6 +13,6 @@ public interface TeacherService {
     TeacherEntity save(TeacherEntity teacherEntity);
     void delete(TeacherEntity teacherEntity);
     void deleteById(Integer id);
-    void updateTeacherById(Integer id, TeacherEntity teacherEntity);
+    //void updateTeacherById(Integer id, TeacherEntity teacherEntity);
 
 }

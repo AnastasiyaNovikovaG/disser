@@ -14,6 +14,6 @@ public interface ContractRepository extends CrudRepository<ContractEntity, Integ
     ContractEntity save(ContractEntity contractEntity);
     void delete(ContractEntity contractEntity);
     void deleteById(Integer id);
-    void updateContractById(Integer id, ContractEntity contractEntity);
+    //void updateContractById(Integer id, ContractEntity contractEntity);
 
 }

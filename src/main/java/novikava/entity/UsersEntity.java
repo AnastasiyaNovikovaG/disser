@@ -4,11 +4,12 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
+@Table(name = "users", schema = "mydb", catalog = "")
 public class UsersEntity {
     private int id;
     private String email;
     private String password;
-    private Collection<RolesHasUsers> rolesHasUsersById;
+    //private Collection<RolesHasUsers> rolesHasUsersById;
 
     @Id
     @Column(name = "id")
@@ -62,12 +63,12 @@ public class UsersEntity {
         return result;
     }
 
-    @OneToMany(mappedBy = "usersByUsersId")
+   /* @OneToMany(mappedBy = "usersByUsersId")
     public Collection<RolesHasUsers> getRolesHasUsersById() {
         return rolesHasUsersById;
     }
 
     public void setRolesHasUsersById(Collection<RolesHasUsers> rolesHasUsersById) {
         this.rolesHasUsersById = rolesHasUsersById;
-    }
+    }*/
 }

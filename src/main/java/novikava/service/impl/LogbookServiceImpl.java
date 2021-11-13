@@ -39,8 +39,8 @@ public class LogbookServiceImpl implements LogbookService {
         logbookRepository.deleteById(id);
     }
 
-    @Override
+   /* @Override
     public void updateLogbookById(Integer id, LogbookEntity logbookEntity) {
         logbookRepository.updateLogbookById(id,logbookEntity);
-    }
+    }*/
 }

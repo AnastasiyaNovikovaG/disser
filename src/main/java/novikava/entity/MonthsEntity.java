@@ -1,15 +1,26 @@
 package novikava.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "months", schema = "mydb", catalog = "")
 public class MonthsEntity {
     private int id;
     private String month;
     private int semestrId;
+    private SemestrEntity semestrByIdSemestrEntity;
+
+  /*  @ManyToOne
+    @JoinColumn(name = "semestr_by_semestr_id_id", insertable = false, updatable = false)
+    private SemestrEntity semestrBySemestrId;
+
+    public SemestrEntity getSemestrBySemestrId() {
+        return semestrBySemestrId;
+    }
+
+    public void setSemestrBySemestrId(SemestrEntity semestrBySemestrId) {
+        this.semestrBySemestrId = semestrBySemestrId;
+    }*/
 
     @Id
     @Column(name = "id")
@@ -61,5 +72,15 @@ public class MonthsEntity {
         result = 31 * result + (month != null ? month.hashCode() : 0);
         result = 31 * result + semestrId;
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "semestr_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public SemestrEntity getSemestrByIdSemestr() {
+        return semestrByIdSemestrEntity;
+    }
+
+    public void setSemestrByIdSemestr(SemestrEntity semestrByIdSemestrEntity) {
+        this.semestrByIdSemestrEntity = semestrByIdSemestrEntity;
     }
 }

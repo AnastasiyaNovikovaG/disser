@@ -4,12 +4,13 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
+@Table(name = "department", schema = "mydb", catalog = "")
 public class DepartmentEntity {
     private int id;
     private String name;
     private int facultyId;
     private FacultyEntity facultyByFacultyEntityId;
-    private Collection<LogbookEntity> logbooksById;
+    /*private Collection<LogbookEntity> logbooksById;*/
 
     @Id
     @Column(name = "id")
@@ -64,7 +65,7 @@ public class DepartmentEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "faculty_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "faculty_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public FacultyEntity getFacultyByFacultyId() {
         return facultyByFacultyEntityId;
     }
@@ -73,12 +74,12 @@ public class DepartmentEntity {
         this.facultyByFacultyEntityId = facultyByFacultyEntityId;
     }
 
-    @OneToMany(mappedBy = "departmentByDepartmentId")
+   /* @OneToMany(mappedBy = "departmentByDepartmentId")
     public Collection<LogbookEntity> getLogbooksById() {
         return logbooksById;
     }
 
     public void setLogbooksById(Collection<LogbookEntity> logbooksById) {
         this.logbooksById = logbooksById;
-    }
+    }*/
 }

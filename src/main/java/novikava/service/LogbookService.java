@@ -13,6 +13,6 @@ public interface LogbookService {
     LogbookEntity save(LogbookEntity logbookEntity);
     void delete(LogbookEntity logbookEntity);
     void deleteById(Integer id);
-    void updateLogbookById(Integer id, LogbookEntity logbookEntity);
+    //void updateLogbookById(Integer id, LogbookEntity logbookEntity);
 
 }

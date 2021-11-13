@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
+@Table(name = "logbook", schema = "mydb", catalog = "")
 public class LogbookEntity {
     private int id;
     private Date date;
@@ -146,7 +147,7 @@ public class LogbookEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "id_type", referencedColumnName = "id")
+    @JoinColumn(name = "id_type", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public TypeOfClassEntity getTypeOfClassByIdType() {
         return typeOfClassByIdType;
     }
@@ -156,7 +157,7 @@ public class LogbookEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "id_subj", referencedColumnName = "id")
+    @JoinColumn(name = "id_subj", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public SubjectEntity getSubjectByIdSubj() {
         return subjectEntityByIdSubj;
     }
@@ -166,7 +167,7 @@ public class LogbookEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "id_teach", referencedColumnName = "id")
+    @JoinColumn(name = "id_teach", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public TeacherEntity getTeacherByIdTeach() {
         return teacherEntityByIdTeach;
     }
@@ -176,7 +177,7 @@ public class LogbookEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "id_sem", referencedColumnName = "id")
+    @JoinColumn(name = "id_sem", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public SemestrEntity getSemestrByIdSem() {
         return semestrEntityByIdSem;
     }
@@ -186,7 +187,7 @@ public class LogbookEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "months_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "months_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public MonthsEntity getMonthsByMonthsId() {
         return monthsByMonthsEntityId;
     }
@@ -196,7 +197,7 @@ public class LogbookEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "department_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "department_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public DepartmentEntity getDepartmentByDepartmentId() {
         return departmentByDepartmentEntityId;
     }

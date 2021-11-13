@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
+@Table(name = "semestr", schema = "mydb", catalog = "")
 public class SemestrEntity {
     private int id;
     private Integer number;
@@ -49,12 +50,12 @@ public class SemestrEntity {
         return result;
     }
 
-    @OneToMany(mappedBy = "semestrBySemestrId")
+    /*@OneToMany(mappedBy = "semestrBySemestrId", cascade=CascadeType.ALL)
     public Collection<MonthsEntity> getMonthsById() {
         return monthsEntityById;
     }
 
     public void setMonthsById(Collection<MonthsEntity> monthsEntityById) {
         this.monthsEntityById = monthsEntityById;
-    }
+    }*/
 }

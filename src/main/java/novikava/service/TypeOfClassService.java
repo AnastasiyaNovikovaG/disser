@@ -13,6 +13,6 @@ public interface TypeOfClassService {
     TypeOfClassEntity save(TypeOfClassEntity typeOfClassEntity);
     void delete(TypeOfClassEntity typeOfClassEntity);
     void deleteById(Integer id);
-    void updateTypeOfClassById(Integer id, TypeOfClassEntity typeOfClassEntity);
+    //void updateTypeOfClassById(Integer id, TypeOfClassEntity typeOfClassEntity);
 
 }

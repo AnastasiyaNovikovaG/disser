@@ -39,8 +39,8 @@ public class TypeOfClassServiceImpl implements TypeOfClassService {
         typeOfClassRepository.deleteById(id);
     }
 
-    @Override
+    /*@Override
     public void updateTypeOfClassById(Integer id, TypeOfClassEntity typeOfClassEntity) {
         typeOfClassRepository.updateTypeOfClassById(id,typeOfClassEntity);
-    }
+    }*/
 }

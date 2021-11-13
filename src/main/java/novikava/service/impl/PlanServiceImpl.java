@@ -44,8 +44,8 @@ public class PlanServiceImpl implements PlanService {
         planRepository.deleteById(id);
     }
 
-    @Override
+    /*@Override
     public void updatePlanById(Integer id, PlanEntity planEntity) {
         planRepository.updatePlanById(id,planEntity);
-    }
+    }*/
 }

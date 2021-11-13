@@ -39,8 +39,8 @@ public class TeacherServiceImpl implements TeacherService {
         teacherRepository.deleteById(id);
     }
 
-    @Override
+    /*@Override
     public void updateTeacherById(Integer id, TeacherEntity teacherEntity) {
         teacherRepository.updateTeacherById(id,teacherEntity);
-    }
+    }*/
 }

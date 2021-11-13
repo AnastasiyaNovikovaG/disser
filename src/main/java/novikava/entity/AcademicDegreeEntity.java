@@ -5,10 +5,10 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "academic_degree", schema = "mydb")
-public class AcademicDegreeEntity implements Comparable<AcademicDegreeEntity>{
+public class AcademicDegreeEntity implements Comparable<AcademicDegreeEntity> {
     private int id;
     private String name;
-    private Collection<TeacherEntity> teachersById;
+   /* private Collection<TeacherEntity> teachersById;*/
 
     @Id
     @Column(name = "id")
@@ -50,14 +50,14 @@ public class AcademicDegreeEntity implements Comparable<AcademicDegreeEntity>{
         return result;
     }
 
-    @OneToMany(mappedBy = "academicDegreeByIdDegree")
+    /*@OneToMany(mappedBy = "academicDegreeByIdDegree")
     public Collection<TeacherEntity> getTeachersById() {
         return teachersById;
     }
 
     public void setTeachersById(Collection<TeacherEntity> teachersById) {
         this.teachersById = teachersById;
-    }
+    }*/
 
     @Override
     public int compareTo(AcademicDegreeEntity o) {

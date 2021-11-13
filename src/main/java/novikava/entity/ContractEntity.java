@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
+@Table(name = "contract", schema = "mydb", catalog = "")
 public class ContractEntity {
     private int id;
     private Integer idTeacher;
@@ -142,7 +143,7 @@ public class ContractEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "id_teacher", referencedColumnName = "id")
+    @JoinColumn(name = "id_teacher", referencedColumnName = "id", insertable = false, updatable = false)
     public TeacherEntity getTeacherByIdTeacher() {
         return teacherByIdTeacherEntity;
     }

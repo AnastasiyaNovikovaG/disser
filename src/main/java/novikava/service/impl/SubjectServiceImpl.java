@@ -39,8 +39,8 @@ public class SubjectServiceImpl implements SubjectService {
         subjectRepository.deleteById(id);
     }
 
-    @Override
+    /*@Override
     public void updateSubjectById(Integer id, SubjectEntity subjectEntity) {
         subjectRepository.updateSubjectById(id,subjectEntity);
-    }
+    }*/
 }

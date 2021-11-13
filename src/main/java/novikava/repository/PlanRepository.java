@@ -9,12 +9,13 @@ import java.util.List;
 @Repository
 public interface PlanRepository extends CrudRepository<PlanEntity, Integer> {
 
+
     PlanEntity findPlanById(Integer id);
     PlanEntity findPlanByTeacherId(Integer id);
     List<PlanEntity> findAll();
     PlanEntity save(PlanEntity planEntity);
     void delete(PlanEntity planEntity);
     void deleteById(Integer id);
-    void updatePlanById(Integer id, PlanEntity planEntity);
+    //void updatePlanById(Integer id, PlanEntity planEntity);
 
 }

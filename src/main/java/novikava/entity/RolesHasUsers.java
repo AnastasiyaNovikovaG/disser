@@ -11,7 +11,7 @@ public class RolesHasUsers {
     private int teacherId;
     private RolesEntity rolesByRolesEntityId;
     private UsersEntity usersByUsersEntityId;
-    private TeacherEntity teacherByTeacherEntityId;
+  // private TeacherEntity teacherByTeacherEntityId;
 
     @Id
     @Column(name = "roles_id")
@@ -66,7 +66,7 @@ public class RolesHasUsers {
     }
 
     @ManyToOne
-    @JoinColumn(name = "roles_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "roles_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public RolesEntity getRolesByRolesId() {
         return rolesByRolesEntityId;
     }
@@ -76,7 +76,7 @@ public class RolesHasUsers {
     }
 
     @ManyToOne
-    @JoinColumn(name = "users_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "users_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public UsersEntity getUsersByUsersId() {
         return usersByUsersEntityId;
     }
@@ -85,7 +85,7 @@ public class RolesHasUsers {
         this.usersByUsersEntityId = usersByUsersEntityId;
     }
 
-    @ManyToOne
+   /* @ManyToOne
     @JoinColumn(name = "teacher_id", referencedColumnName = "id", nullable = false)
     public TeacherEntity getTeacherByTeacherId() {
         return teacherByTeacherEntityId;
@@ -93,5 +93,5 @@ public class RolesHasUsers {
 
     public void setTeacherByTeacherId(TeacherEntity teacherByTeacherEntityId) {
         this.teacherByTeacherEntityId = teacherByTeacherEntityId;
-    }
+    }*/
 }

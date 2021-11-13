@@ -39,8 +39,8 @@ public class ContractServiceImpl implements ContractService {
         contractRepository.deleteById(id);
     }
 
-    @Override
+   /* @Override
     public void updateContractById(Integer id, ContractEntity contractEntity) {
         contractRepository.updateContractById(id,contractEntity);
-    }
+    }*/
 }
