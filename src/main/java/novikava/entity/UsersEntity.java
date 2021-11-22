@@ -9,7 +9,8 @@ public class UsersEntity {
     private int id;
     private String email;
     private String password;
-    //private Collection<RolesHasUsers> rolesHasUsersById;
+    private String username;
+    private Collection<RolesHasUsers> rolesHasUsersById;
 
     @Id
     @Column(name = "id")
@@ -41,6 +42,10 @@ public class UsersEntity {
         this.password = password;
     }
 
+    public void setUsername() {
+        this.username = this.email;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -63,12 +68,18 @@ public class UsersEntity {
         return result;
     }
 
-   /* @OneToMany(mappedBy = "usersByUsersId")
+    @OneToMany(mappedBy = "usersByUsersId")
     public Collection<RolesHasUsers> getRolesHasUsersById() {
         return rolesHasUsersById;
     }
 
     public void setRolesHasUsersById(Collection<RolesHasUsers> rolesHasUsersById) {
         this.rolesHasUsersById = rolesHasUsersById;
-    }*/
+    }
+
+    public UsersEntity(String email, String password) {
+        this.email = email;
+        this.password = password;
+        this.username = email;
+    }
 }
