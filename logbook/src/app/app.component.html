@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <!-- Navigation -->
+  <div class="content">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-green fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">БНТУ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/logbook" routerLink="logbook">Журнал</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">По авторам</a>
+            </li>
+            <li class="nav-item" *ngIf="showAdminBoard">
+              <a href="/admin" class="nav-link" routerLink="admin">Панель администратора</a>
+            </li>
+            <li class="nav-item" *ngIf="showTeacherBoard">
+              <a href="/author" class="nav-link" routerLink="author">Панель автора</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+            <li class="nav-item">
+              <a href="/register" class="nav-link" routerLink="register">Регистрация</a>
+            </li>
+            <li class="nav-item">
+              <a href="/login" class="nav-link" routerLink="login">Войти</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+
+            <li class="nav-item">
+              <a href class="nav-link" (click)="logout()">Выйти</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br/>
+    <!-- Page Content -->
+    <div class="container">
+      <br/>
+      <br/>
+      <router-outlet></router-outlet>
+
+    </div>
+    <!-- /.container -->
+
+  </div>
+
+
+</div>
+

@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-lg-3">
+  </div>
+  <!-- /.col-lg-3 -->
+
+
+  <div class="col-lg-9">
+
+
+    <table class="table">
+      <thead class="bg-green">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Имя</th>
+        <th scope="col">Фамилия</th>
+        <th scope="col">Username</th>
+        <th scope="col">email</th>
+        <th scope="col">Роль</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of books">
+        <th scope="row">{{book.id}}</th>
+        <td>{{book.date}}</td>
+        <td>{{book.hours}}</td>
+        <td>{{book.idTeach}}</td>
+        <td>{{book.idSem}}</td>
+        <td><a class="btn btn-green" role="button">Изменить роль</a></td>
+      </tr>
+
+      </tbody>
+    </table>
+      <div *ngIf="books?.length == 0" class="col-md-12 alert alert-warning mt-3">
+        No books found
+      </div>
+    </div>
+
+
+  </div>
+  <!-- /.col-lg-9 -->
+
+
+<!-- /.row -->
+

@@ -1,3 +1,4 @@
+/*
 package novikava.security;
 
 import java.util.List;
@@ -62,3 +63,4 @@ public class JwtResponse {
         return roles;
     }
 }
+*/

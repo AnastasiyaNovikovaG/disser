@@ -1,0 +1,100 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+
+@font-face{
+  font-family: 'Times New Roman';
+}
+
+.annotation{
+  font-size:12pt;
+}
+
+body{
+  font-family: 'Times New Roman';
+  dding-top: 56px;
+}
+
+
+body,html{
+  height: 100%;
+}
+
+
+
+.wrapper{
+  min-height: 100%;
+  position: relative;
+}
+
+.content{
+  padding-bottom: 100px;
+}
+
+a{
+  cursor: pointer;
+}
+
+.btn{
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.alert{
+  background-color: #ded;
+}
+.list-group-item{
+  background-color: #ded;
+  color: black;
+}
+
+.nav-link{
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.table{
+  font-size: 12pt;
+}
+
+.wrapper{
+  font-size: 14pt;
+  background-color: #ded;
+}
+
+.card{
+  font-size: 14pt;
+  background-color: #ded;
+}
+
+.bg-green{
+  background-color: #0F3D17;
+  color: #ded;
+}
+
+.btn-green-rigth {
+  background-color: #0F3D17;
+  color: #ded;
+  float: right;
+}
+
+.btn-green{
+  background-color: #0F3D17;
+  color: #ded;
+}
+
+.btn-green-nonmargin{
+  background-color: #0F3D17;
+  color: #ded;
+  margin-bottom: 0px;
+
+}
+.btn-light-green{
+  color: #0F3D17;
+  background-color: #ded;
+}
+
+.form-control{
+  background-color: #F1FBF1;
+}

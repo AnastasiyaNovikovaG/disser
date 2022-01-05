@@ -10,7 +10,7 @@ public class RolesHasUsers {
     private int usersId;
     private int teacherId;
     private RolesEntity rolesByRolesEntityId;
-    private UsersEntity usersByUsersEntityId;
+    //private UsersEntity usersByUsersEntityId;
   // private TeacherEntity teacherByTeacherEntityId;
 
     @Id
@@ -75,15 +75,15 @@ public class RolesHasUsers {
         this.rolesByRolesEntityId = rolesByRolesEntityId;
     }
 
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "users_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public UsersEntity getUsersByUsersId() {
-        return usersByUsersEntityId;
+        return null;
     }
 
     public void setUsersByUsersId(UsersEntity usersByUsersEntityId) {
-        this.usersByUsersEntityId = usersByUsersEntityId;
-    }
+
+    }*/
 
    /* @ManyToOne
     @JoinColumn(name = "teacher_id", referencedColumnName = "id", nullable = false)

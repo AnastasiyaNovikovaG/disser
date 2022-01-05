@@ -1,6 +1,7 @@
 package novikava.service.impl;
 
 import novikava.entity.AcademicDegreeEntity;
+import novikava.entity.TeacherEntity;
 import novikava.entity.UsersEntity;
 import novikava.repository.AcademicDegreeRepository;
 import novikava.repository.UsersRepository;
@@ -14,7 +15,7 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService {
 
-  /*  @Autowired
+    @Autowired
     private UsersRepository usersRepository;
 
 
@@ -22,12 +23,18 @@ public class UserServiceImpl implements UserService {
     public UsersEntity findByEmail(String email) {
         return usersRepository.findByEmail(email);
     }
-*///   /* @Override
+
+    @Override
+    public UsersEntity findUserById(Integer id) {
+        return usersRepository.findUsersById(id);
+    }
+
+    //    @Override
 //    public Optional<UsersEntity> findByUsername(String username) {
 //        return usersRepository.findByUsername(username);
 //    }
-//*/
-   /* @Override
+//
+    @Override
     public List<UsersEntity> findAll() {
         return usersRepository.findAll();
     }
@@ -40,5 +47,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public UsersEntity save(UsersEntity usersEntity) {
         return usersRepository.save(usersEntity);
-    }*/
+    }
+
+    @Override
+    public void delete(UsersEntity usersEntity) {
+        usersRepository.delete(usersEntity);
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        usersRepository.deleteById(id);
+    }
 }

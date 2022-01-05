@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url"><![CDATA[jdbc:mysql://localhost:3306/mydb?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&serverTimezone=UTC]]></property>
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+      <mapping class="novikava.entity.AcademicDegreeEntity"/>
+      <mapping class="novikava.entity.AcademicTitleEntity"/>
+      <mapping class="novikava.entity.ContractEntity"/>
+      <mapping class="novikava.entity.LogbookEntity"/>
+      <mapping class="novikava.entity.RolesEntity"/>
+      <mapping class="novikava.entity.RolesHasUsers"/>
+      <mapping class="novikava.entity.TeacherEntity"/>
+    <mapping class="novikava.entity.UsersEntity"/>
+    <mapping class="novikava.entity.DepartmentEntity"/>
+    <mapping class="novikava.entity.FacultyEntity"/>
+    <mapping class="novikava.entity.MonthsEntity"/>
+    <mapping class="novikava.entity.PlanEntity"/>
+    <mapping class="novikava.entity.SemestrEntity"/>
+    <mapping class="novikava.entity.SubjectEntity"/>
+    <mapping class="novikava.entity.TypeOfClassEntity"/>
+    <mapping class="novikava.entity.MonthsEntity"/>
+      <mapping class="novikava.entity.SemestrEntity"/>
+    <mapping class="novikava.entity.MonthsEntity"/>
+    <mapping class="novikava.entity.SemestrEntity"/>
+      <mapping class="entity.PlanEntity"/>
+      <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>

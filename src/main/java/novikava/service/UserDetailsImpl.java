@@ -1,3 +1,4 @@
+/*
 package novikava.service;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -98,3 +99,4 @@ public class UserDetailsImpl implements UserDetails {
         return Objects.equals(id, user.id);
     }
 }
+*/

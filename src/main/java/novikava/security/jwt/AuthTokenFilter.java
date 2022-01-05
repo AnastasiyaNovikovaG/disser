@@ -1,3 +1,4 @@
+/*
 package novikava.security.jwt;
 
 import io.jsonwebtoken.ExpiredJwtException;
@@ -22,7 +23,8 @@ import java.io.IOException;
 
 public class AuthTokenFilter{ //extends OncePerRequestFilter {
 
-    /*@Autowired
+    */
+/*@Autowired
     private JwtUtils jwtUtils;
 
     @Autowired
@@ -60,5 +62,7 @@ public class AuthTokenFilter{ //extends OncePerRequestFilter {
         }
         return null;
         }
-*/
+*//*
+
 }
+*/

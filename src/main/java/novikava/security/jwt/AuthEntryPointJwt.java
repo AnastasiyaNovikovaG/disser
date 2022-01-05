@@ -1,3 +1,4 @@
+/*
 package novikava.security.jwt;
 
 import org.slf4j.Logger;
@@ -25,3 +26,4 @@ public class AuthEntryPointJwt implements AuthenticationEntryPoint, Serializable
     }
 
 }
+*/

@@ -6,13 +6,21 @@ import java.util.Collection;
 @Entity
 @Table(name = "users", schema = "mydb", catalog = "")
 public class UsersEntity {
+
+
     private int id;
+
     private String email;
     private String password;
     private String username;
     private Collection<RolesHasUsers> rolesHasUsersById;
 
+    public UsersEntity() {
+
+    }
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     public int getId() {
         return id;
@@ -68,7 +76,7 @@ public class UsersEntity {
         return result;
     }
 
-    @OneToMany(mappedBy = "usersByUsersId")
+    @OneToMany(mappedBy = "usersId")
     public Collection<RolesHasUsers> getRolesHasUsersById() {
         return rolesHasUsersById;
     }

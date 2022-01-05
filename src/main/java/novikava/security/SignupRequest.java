@@ -1,3 +1,4 @@
+/*
 package novikava.security;
 
 import javax.validation.constraints.Email;
@@ -66,3 +67,4 @@ public class SignupRequest {
     }
 
 }
+*/
