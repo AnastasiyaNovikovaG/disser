@@ -1,8 +1,6 @@
 import {Faculty} from "./faculty";
 
-export class Department {
+export class TypeOfClass {
   id: number;
   name: string;
-  facultyId : number;
-  faculty: Faculty;
 }

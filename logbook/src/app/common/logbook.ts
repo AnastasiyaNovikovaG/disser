@@ -1,7 +1,10 @@
+import {TypeOfClass} from "./typeOfClass";
+
 export class Logbook{
   id : number;
   date : Date;
   idType : number;
+  type: TypeOfClass;
   idSubj: number;
   hours : number;
   idTeach: number;

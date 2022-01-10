@@ -1,3 +1,4 @@
+/*
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
 import {TokenStorageService} from "../../services/token-storage.service";
@@ -28,3 +29,4 @@ export class BoardAuthorComponent implements OnInit {
   }
 
 }
+*/

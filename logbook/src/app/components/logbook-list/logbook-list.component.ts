@@ -3,6 +3,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Logbook} from "../../common/logbook";
 import {LogbookService} from "../../services/logbook.service";
 import {NgbPaginationConfig} from '@ng-bootstrap/ng-bootstrap';
+import {TypeOfClass} from "../../common/typeOfClass";
+import {TypeOfClassService} from "../../services/typeOfClass.service";
 
 
 @Component({
@@ -12,16 +14,19 @@ import {NgbPaginationConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class LogbookListComponent implements OnInit{
 
+
   books: Logbook[] = [];
+  info: Logbook = new Logbook();
+  type: TypeOfClass = new TypeOfClass();
   currentCategoryId: number = 1;
   previousCategory: number = 1;
   searchMode: boolean = false;
-
   pageSize: number = 3;
   currentPage: number = 1;
   totalRecords: number = 0;
 
   constructor(private _logbookService: LogbookService,
+              private _typeOfClassService: TypeOfClassService,
               private _activatedRoute: ActivatedRoute,
               config: NgbPaginationConfig){
     config.boundaryLinks = true;
@@ -36,20 +41,35 @@ export class LogbookListComponent implements OnInit{
   }
 
 
-  listBooks() {
 
+  listBooks() {
     this._logbookService.getAllBooks().subscribe(
       data => this.books = data
     );
 
 
-    /*this.searchMode = this._activatedRoute.snapshot.paramMap.has('keyword');
+   /* this._logbookService.getBooksList().subscribe(
+      data => this.books = data
+    );*/
+    //this.books.forEach(this.getBookInfo())
 
-    if (this.searchMode) {
-      this.handleSearchBooks();
-    } else {
-      this.handleListBooks();
-    }*/
+  }
+
+  typeOfClassSearch(typeId: number) {
+    this._typeOfClassService.get(typeId).subscribe(
+      data=>this.type = data
+    );
+  }
+
+  getBookInfo(id:number) {
+
+    //const id: number = + this._activatedRoute.snapshot.paramMap.get('id');
+
+    this._logbookService.get(id).subscribe(
+      data => {
+        this.info = data;
+      }
+    );
   }
 
   handleListBooks() {

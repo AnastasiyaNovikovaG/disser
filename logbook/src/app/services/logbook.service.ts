@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Logbook} from "../common/logbook";
 import {map} from "rxjs/operators";
+import {TypeOfClass} from "../common/typeOfClass";
 
 
 const httpOptions = {
@@ -19,12 +20,15 @@ const httpDelOptions= {
   })
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class LogbookService{
 
   //url-адрес запросов
   private baseUrl = 'http://localhost:8084/logbook';
   private url='http://localhost:8084/';
+  private typeUrl = 'http://localhost:8084/type';
 /*  private categoryUrl = 'http://localhost:8084/api/category';
   private universityUrl='http://localhost:8084/api/universities';
   private departmentUrl='http://localhost:8084/api/departments/search';
@@ -68,33 +72,35 @@ export class LogbookService{
     return this.httpClient.get<GetResponseBooks>(this.baseUrl);
   }
 
-  /*getBookCategories(): Observable<BookCategory[]> {
-    return this.httpClient.get<GetResponseBookCategory>(this.categoryUrl).pipe(
-      map(response => response._embedded.bookCategories)
+  getBookTypes(): Observable<TypeOfClass[]> {
+    return this.httpClient.get<GetResponseType>(this.typeUrl).pipe(
+      map(response => response._embedded.type)
     );
   }
 
-  getDepartments(theFacultyId): Observable<Department[]> {
-    const departmentsUrl=`${this.departmentUrl}/faculty?id=${theFacultyId}`;
-    return this.httpClient.get<GetResponseDepartment>(departmentsUrl).pipe(
-      map(response => response._embedded.departments)
-    );
-  }
+  /*
+    getDepartments(theFacultyId): Observable<Department[]> {
+      const departmentsUrl=`${this.departmentUrl}/faculty?id=${theFacultyId}`;
+      return this.httpClient.get<GetResponseDepartment>(departmentsUrl).pipe(
+        map(response => response._embedded.departments)
+      );
+    }
 
-  getAllDepartments(): Observable<any> {
-    const allDepartmentsUrl=`http://localhost:8084/api/departments/`;
-    return this.httpClient.get(allDepartmentsUrl);
-  }
+    getAllDepartments(): Observable<any> {
+      const allDepartmentsUrl=`http://localhost:8084/api/departments/`;
+      return this.httpClient.get(allDepartmentsUrl);
+    }
 
-  searchBooks(keyword: string, currentPage: number, pageSize: number): Observable<GetResponseBooks> {
-    const searchUrl = `${this.baseUrl}/search/searchbykeyword?title=${keyword}&page=${currentPage}&size=${pageSize}`;
-    return this.httpClient.get<GetResponseBooks>(searchUrl);
-  }*/
+    searchBooks(keyword: string, currentPage: number, pageSize: number): Observable<GetResponseBooks> {
+      const searchUrl = `${this.baseUrl}/search/searchbykeyword?title=${keyword}&page=${currentPage}&size=${pageSize}`;
+      return this.httpClient.get<GetResponseBooks>(searchUrl);
+    }*/
 
   get(bookId: number): Observable<Logbook> {
     const bookDetailsUrl = `${this.baseUrl}/${bookId}`;
     return this.httpClient.get<Logbook>(bookDetailsUrl);
   }
+
 
  /* getFaculties(theUniId: number): Observable<Faculty[]> {
     const facultiesUrl=`${this.facultyUrl}/university?id=${theUniId}`;
@@ -190,12 +196,13 @@ interface GetResponseBooks {
   };
 }
 
-/*interface GetResponseBookCategory {
+interface GetResponseType{
   _embedded: {
-    bookCategories: BookCategory[];
+    type: TypeOfClass[];
   };
 }
 
+/*
 interface GetResponseAuthor {
   _embedded: {
     users: User[];

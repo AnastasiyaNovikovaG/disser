@@ -1,3 +1,4 @@
+/*
 import {Component, OnInit} from '@angular/core';
 import {UserService} from 'src/app/services/user.service';
 
@@ -23,3 +24,4 @@ export class BoardAdminComponent implements OnInit {
   }
 
 }
+*/

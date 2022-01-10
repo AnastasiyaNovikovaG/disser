@@ -11,21 +11,21 @@
       <thead class="bg-green">
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">Имя</th>
-        <th scope="col">Фамилия</th>
-        <th scope="col">Username</th>
-        <th scope="col">email</th>
-        <th scope="col">Роль</th>
+        <th scope="col">Дата</th>
+        <th scope="col">Тип занятия</th>
+        <th scope="col">Часы</th>
+        <th scope="col">Предмет</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let book of books">
         <th scope="row">{{book.id}}</th>
         <td>{{book.date}}</td>
+        <td>{{book.idType}}</td>
         <td>{{book.hours}}</td>
-        <td>{{book.idTeach}}</td>
-        <td>{{book.idSem}}</td>
-        <td><a class="btn btn-green" role="button">Изменить роль</a></td>
+        <td>{{book.idSubj}}</td>
+        <td><span>{{ typeOfClassSearch(book.idType) }}</span>{{type.name}}</td>
+        <td><a class="btn" role="button">Удалить</a></td>
       </tr>
 
       </tbody>

@@ -4,7 +4,6 @@ import {Observable} from 'rxjs';
 import {User} from "../common/user";
 import {map} from "rxjs/operators";
 import {Role} from "../common/role";
-import {Book} from "../common/book";
 
 const API_URL = 'http://localhost:8084/api/test';
 

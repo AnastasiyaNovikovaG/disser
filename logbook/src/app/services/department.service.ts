@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
-import {BookCategory} from "../common/book-category";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Department} from "../common/department";
 import {map} from "rxjs/operators";
