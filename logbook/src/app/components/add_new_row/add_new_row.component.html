@@ -1,0 +1,48 @@
+<!--
+<button  (click)="openModal(NewRow)" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#NewTask" type="button">New Task</button>
+<ng-template #NewRow>
+
+
+  <div class="modal-header">
+    <h4 class="modal-title">Сделать запись</h4>
+    <button (click)="closeModal()" class="close" data-dismiss="modal">x</button>
+
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label >Task Code </label>
+      <input [(ngModel)]="" type="text"  name="code" class="form-control" >
+      <label >Name</label>
+      <input [(ngModel)]="" type="text"  name="name" class="form-control" >
+
+      <label >Project Code {{newTask.projectId}}</label>
+      <select  [(ngModel)]="newTask.projectId" class="form-control">
+        <option name="projectCode" [value]="projectCode.projectId" *ngFor="let projectCode of taskProjectCode">{{projectCode.projectCode}}</option>
+      </select>
+
+      <label >Priority </label>
+      <select  [(ngModel)]="newTask.priorityId" class="form-control" >
+        <option name="priority"  [value]="priority.priorityId" *ngFor="let priority of taskPriority">{{priority.priority}}</option>
+      </select>
+
+      <label >Due Date</label>
+      <input  name="duedate" [(ngModel)]="newTask.dueDate" type="date" class="form-control" id="Due">
+
+      <label >Estimation (hours)</label>
+      <input name="estimation" [(ngModel)]="newTask.estimation" type="number" min="0"  class="form-control" id="Estimation">
+
+      <label >Assignee</label>
+
+      <select [(ngModel)]="newTask.assign" class="form-control">
+        <option name="assignee" [value]="userName.userId" *ngFor="let userName of userName"> {{userName.surname+" "+userName.name}}</option>
+      </select>
+
+      <label >Description</label>
+      <input name="description" [(ngModel)]="newTask.description" type="text" class="form-control" id="Description">
+
+    </div>
+  </div>
+  <div class="modal-footer"><button (click)="saveNewTask()" class="btn btn-access">OK</button>
+
+  </div></ng-template>
+-->

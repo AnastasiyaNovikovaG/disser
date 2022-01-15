@@ -1,6 +1,8 @@
 package novikava.controller;
 
+import novikava.entity.Converter;
 import novikava.entity.LogbookEntity;
+import novikava.entity.LogbookModel;
 import novikava.service.LogbookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,18 +10,23 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/logbook")
 public class LogbookController {
 
+
     @Autowired
     public LogbookService logbookService;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public List<LogbookEntity> getAllLogbooks() {
-        return logbookService.findAll();
+    public List<LogbookModel> getAllLogbooks() {
+
+        List<LogbookEntity> logbookEntities = logbookService.findAll();
+        List<LogbookModel> logbookModels = logbookEntities.stream().map(Converter::convert).collect(Collectors.toList());
+return logbookModels;
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)

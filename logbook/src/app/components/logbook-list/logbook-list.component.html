@@ -1,35 +1,59 @@
-<div class="row">
-  <div class="col-lg-3">
+<div class="container-fluid">
+  <div class="row jumbotron">
+    <div class="col-2">
+      <app-new-project></app-new-project>
+    </div>
+
+
+
+   <!-- <div class="col-6">
+      <div class="d7">
+        <form>
+          <input type="text" placeholder="Search...">
+          <button type="submit"></button>
+        </form>
+      </div>
+    </div>-->
+
+
   </div>
-  <!-- /.col-lg-3 -->
+</div>
+<div class="container-fluid">
 
+  <div class="col-md-12">
 
-  <div class="col-lg-9">
+    <div class="row text-center alert">
 
+      <table class="table table-bordered table-hover">
+        <thead class="bg-green ">
+        <tr class="active">
+          <th scope="col">ID</th>
+          <th scope="col">Дата</th>
 
-    <table class="table">
-      <thead class="bg-green">
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Дата</th>
-        <th scope="col">Тип занятия</th>
-        <th scope="col">Часы</th>
-        <th scope="col">Предмет</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let book of books">
-        <th scope="row">{{book.id}}</th>
-        <td>{{book.date}}</td>
-        <td>{{book.idType}}</td>
-        <td>{{book.hours}}</td>
-        <td>{{book.idSubj}}</td>
-        <td><span>{{ typeOfClassSearch(book.idType) }}</span>{{type.name}}</td>
-        <td><a class="btn" role="button">Удалить</a></td>
-      </tr>
+          <th scope="col">Тип занятия</th>
+          <th scope="col">Часы</th>
+          <th scope="col">Предмет</th>
+          <th scope="col"> Действие</th>
 
-      </tbody>
-    </table>
+        </tr>
+        </thead>
+        <tbody id="Table">
+        <tr *ngFor="let book of books">
+          <th scope="row">{{book.id}}</th>
+          <td>{{book.date}}</td>
+          <td>{{book.type}}</td>
+          <td>{{book.hours}}</td>
+          <td>{{book.subject}}</td>
+
+          <td>
+            <button style="align-content: center" class="btn btn-outline-info bnt-rounded" [routerLink]=""> Изменить</button>
+            <button style="align-content: center" class="btn btn-outline-danger" [routerLink]="">Удалить</button>
+          </td>
+
+        </tr>
+
+        </tbody>
+      </table>
       <div *ngIf="books?.length == 0" class="col-md-12 alert alert-warning mt-3">
         No books found
       </div>
@@ -40,5 +64,5 @@
   <!-- /.col-lg-9 -->
 
 
-<!-- /.row -->
-
+  <!-- /.row -->
+</div>
